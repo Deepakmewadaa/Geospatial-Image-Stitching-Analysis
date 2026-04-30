@@ -1,0 +1,18 @@
+# Install during environment setup (internet allowed)
+numpy>=1.24
+Pillow>=10.0
+pandas>=2.0
+
+# PyTorch - install the CUDA 12.x build matching your driver
+# e.g.: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+torch>=2.2
+torchvision>=0.17
+
+# Qwen2-VL
+transformers>=4.45.0
+accelerate>=0.30.0
+qwen-vl-utils>=0.0.8
+huggingface_hub>=0.22.0
+
+# Optional: faster tokenisation
+tokenizers>=0.19
