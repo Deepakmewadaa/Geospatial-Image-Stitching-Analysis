@@ -20,6 +20,7 @@ TMP_REPO_DIR="$(mktemp -d)"
 git clone "${REPO_URL}" "${TMP_REPO_DIR}/repo"
 cp -a "${TMP_REPO_DIR}/repo/." .
 
+python -m pip install pandas
 python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 python -m pip install -r requirements.txt
 
