@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# IMPORTANT: replace this with your public GitHub repository URL before submission.
 REPO_URL="https://github.com/Deepakmewadaa/Geospatial-Image-Stitching-Analysis"
 
 ENV_NAME="gnr_project_env"
@@ -20,6 +19,9 @@ echo "[setup] Cloning project repository"
 TMP_REPO_DIR="$(mktemp -d)"
 git clone "${REPO_URL}" "${TMP_REPO_DIR}/repo"
 cp -a "${TMP_REPO_DIR}/repo/." .
+
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+python -m pip install -r requirements.txt
 
 echo "[setup] Installing Python dependencies"
 python -m pip install numpy Pillow pandas transformers accelerate qwen-vl-utils huggingface_hub tokenizers
